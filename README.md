@@ -1,7 +1,9 @@
 # stretchy-search-ui
 
 A jQuery UI plugin for quick and easy ElasticSearch results
+
 &copy; Tony Wieczorek (tonyjw@gmail.com) 2013
+
 Released under the GPLv3
 
 Love ElasticSearch, but want an easy way to integrate search results in a simple input box?
