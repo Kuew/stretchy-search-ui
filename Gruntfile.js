@@ -16,13 +16,22 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');  
   grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['uglify', 'qunit', 'connect']);
   
   grunt.initConfig({
     qunit: {
       all: ['demo/**/*.html']
+    },
+    connect: {
+      server: {
+        options: {
+          port: 9001,
+          base: 'demo'
+        }
+      }
     }
   });
 
