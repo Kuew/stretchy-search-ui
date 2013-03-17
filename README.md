@@ -14,17 +14,15 @@ StretchySearch UI is a jQuery UI plugin that lets you easily integrate ElasticSe
 Install on your own site:
 * Requires jQuery and jQueryUI.
 
-
 ### See it in action
-TODO: Demo site
 
 Run on a local webserver:
-```ruby
-cd demo
-bundle install
-ruby app.rb
+```bash
+npm install -g grunt-cli
+npm install
+grunt connect:server:keepalive
 ```
-Then, go to http://localhost:4567/ and start searching in the upper right-hand corner.
+Then, go to http://localhost:9001/ and start searching in the upper right-hand corner.
 
 ## Development
 
