@@ -17,3 +17,9 @@ Install on your own site:
 TODO: Demo site
 
 Run on a local webserver:
+```ruby
+cd demo
+bundle install
+ruby app.rb
+```
+Then, go to http://localhost:4567/ and start searching in the upper right-hand corner.
