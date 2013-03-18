@@ -9,7 +9,8 @@
 
     <!-- Le styles -->
     <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" rel="stylesheet">
+    <link href="/qunit-1.11.0.css" rel="stylesheet">
+    <link href="/jquery-ui-1.10.2.custom/css/smoothness/jquery-ui-1.10.2.custom.css" rel="stylesheet">
     
     <style type="text/css">
       body {
@@ -70,6 +71,15 @@
         <p>ElasticSearch makes it easy to search. StretchySearch UI integrates that power easily on your site.</p>
         <p><a href="https://github.com/tonyjw/stretchy-search-ui" class="btn btn-primary btn-large">View on GitHub &raquo;</a></p>
       </div>
+      
+      <!-- QUnit Tests -->
+      <div class="row">
+        <div class="span12">
+          <div id="qunit"></div>
+          <div id="qunit-fixture"></div>
+        </div>
+      </div>
+      
 
       <!-- Example row of columns -->
       <div class="row">
@@ -106,7 +116,9 @@
     <script src="/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.js"></script>
 
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/qunit-1.11.0.js"></script>
     
     <script src="/app.js"></script>
+    <script src="/tests.js"></script>
   </body>
 </html>

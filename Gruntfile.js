@@ -23,7 +23,13 @@ module.exports = function(grunt) {
   
   grunt.initConfig({
     qunit: {
-      all: ['demo/**/*.html']
+      all: {
+        options: {
+          urls: [
+            'http://localhost:9001/index.html'
+          ]
+        }
+      }
     },
     connect: {
       server: {
