@@ -39,7 +39,7 @@ $.mockjax({
   }
 });
 
-$("input[type=search]").stretchySearch({
+var element = $("input[type=search]").stretchySearch({
   url: 'http://localhost:9200',
   index: 'test',
   type: 'book',
@@ -48,8 +48,22 @@ $("input[type=search]").stretchySearch({
   template: ''
 });
 
-test("autcomplete enabled on input", function() {
+var menu = element.autocomplete( "widget" );
+
+test("autcomplete enabled on input", 2, function() {
   ok( $("input[type=search]").length === 1, "Input exists");
 
   ok( typeof($("input[type=search]").data("uiAutocomplete")) === "object", "Autocomplete enabled on input");
+});
+
+asyncTest("search for Ja returns exactly 1 result", 3, function(){
+  element.val( "ja" ).keydown();
+
+  element.on("autocompleteopen", function(event, ui) {
+    ok( true, "search results opened");
+    ok( menu.is( ":visible" ), "menu is visible with search result" );
+    equal( menu.find( ".ui-menu-item" ).length, 1, "# of menu items" );
+    start();
+  });
+    
 });
