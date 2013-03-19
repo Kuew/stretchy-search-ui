@@ -338,8 +338,8 @@
 		}
 
 		// Successful response
-		jsonpSuccess( requestSettings, mockHandler );
-		jsonpComplete( requestSettings, mockHandler );
+		jsonpSuccess( requestSettings, callbackContext, mockHandler );
+		jsonpComplete( requestSettings, callbackContext, mockHandler );
 
 		// If we are running under jQuery 1.5+, return a deferred object
 		if($.Deferred){
@@ -370,8 +370,8 @@
 		// Handle JSONP-style loading
 		window[ jsonp ] = window[ jsonp ] || function( tmp ) {
 			data = tmp;
-			jsonpSuccess( requestSettings, mockHandler );
-			jsonpComplete( requestSettings, mockHandler );
+			jsonpSuccess( requestSettings, callbackContext, mockHandler );
+			jsonpComplete( requestSettings, callbackContext, mockHandler );
 			// Garbage collect
 			window[ jsonp ] = undefined;
 
@@ -386,7 +386,7 @@
 	}
 
 	// The JSONP request was successful
-	function jsonpSuccess(requestSettings, mockHandler) {
+	function jsonpSuccess(requestSettings, callbackContext, mockHandler) {
 		// If a local callback was specified, fire it and pass it the data
 		if ( requestSettings.success ) {
 			requestSettings.success.call( callbackContext, ( mockHandler.response ? mockHandler.response.toString() : mockHandler.responseText || ''), status, {} );
@@ -399,7 +399,7 @@
 	}
 
 	// The JSONP request was completed
-	function jsonpComplete(requestSettings, mockHandler) {
+	function jsonpComplete(requestSettings, callbackContext, mockHandler) {
 		// Process result
 		if ( requestSettings.complete ) {
 			requestSettings.complete.call( callbackContext, {} , status );

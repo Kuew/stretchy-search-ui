@@ -20,8 +20,7 @@
             url: o.url + '/' + o.index + '/' + o.type + '/' + '_search',
             dataType: "jsonp",
             data: {
-              q: request.term,
-              callback: '?'
+              q: request.term
             },
             success: function(data) {
               response( $.map( data.hits.hits, function( hit ) {
